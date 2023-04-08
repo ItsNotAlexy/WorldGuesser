@@ -13,19 +13,22 @@ def main():
             time.sleep(1)
             print(Fore.GREEN + "Starting..." + Style.RESET_ALL)
 
-            for country in open("./data/countries.txt", "r"):
-                pyautogui.typewrite(country)
+            data = open("./data/countries.txt", "r")
+
+            for j in data:
+                pyautogui.typewrite(j)
                 pyautogui.press("enter")
             
             print(Fore.GREEN + "Done!" + Style.RESET_ALL)
         elif command == "help":
             print(Fore.GREEN + "Commands:" + Style.RESET_ALL)
             print(Fore.GREEN + "start - Start's the program." + Style.RESET_ALL)
-            print(Fore.GREEN + "help - Display's this message" + Style.RESET_ALL)
+            print(Fore.GREEN + "help - Display's this message." + Style.RESET_ALL)
             print(Fore.GREEN + "exit - Exit's the program." + Style.RESET_ALL)
+            print(Fore.GREEN + "credits - Display credits." + Style.RESET_ALL)
         elif command == "exit":
-            break
             print('Exiting...')
+            break
         elif command == "credits":
             print(Fore.GREEN + "Credits:" + Style.RESET_ALL)
             print(Fore.GREEN + "Made by: ItsNotAlexy | https://github.com/ItsNotAlexy" + Style.RESET_ALL)
